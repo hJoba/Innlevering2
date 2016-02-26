@@ -1,16 +1,18 @@
+package Innlevering2;
 
 public abstract class Kort {
 	private String etterNavn;
 	private String forNavn;
-	private int pinKode;
+	protected int pinKode;
 	private int kortNummer;
-	private boolean sperretKort;
+	protected boolean sperretKort;
 	
 	private static int id = 10000;
 	
-	Kort (String etterNavn, String forNavn,int pinKode){
-		this.etterNavn = etterNavn;
-		this.forNavn =forNavn;
+	Kort (String navn ,int pinKode){
+		String[] s = navn.split(" ");
+		this.etterNavn = s[1];
+		this.forNavn =s[0];
 		this.pinKode = pinKode;
 		id+=1;
 		kortNummer=id;
@@ -27,9 +29,9 @@ public abstract class Kort {
 	}
 	
 	public String toString(){
-		return forNavn + " " + etterNavn + "/n" + kortNummer + "/n" + pinKode + "/n"  + sperretKort;
+		return forNavn + " " + etterNavn + "\n" + kortNummer + "\n" + pinKode + "\n"  + sperretKort;
 	}
-	public abstract boolean sjekkPIN(int pin);
+	public abstract boolean checkPIN(int pin);
 		/*if (pin==pinKode)
 			return true;
 		else 
