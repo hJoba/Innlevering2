@@ -1,8 +1,8 @@
 package Innlevering2;
 
 public abstract class Kort {
-	private String etterNavn;
-	private String forNavn;
+	protected String etternavn;
+	protected String fornavn;
 	protected int pinKode;
 	private int kortNummer;
 	protected boolean sperretKort;
@@ -11,8 +11,8 @@ public abstract class Kort {
 	
 	Kort (String navn ,int pinKode){
 		String[] s = navn.split(" ");
-		this.etterNavn = s[1];
-		this.forNavn =s[0];
+		this.etternavn = s[1];
+		this.fornavn =s[0];
 		this.pinKode = pinKode;
 		id+=1;
 		kortNummer=id;
@@ -21,7 +21,7 @@ public abstract class Kort {
 	}
 	
 	public String getNavn(){
-		return forNavn + " " + etterNavn;
+		return fornavn + " " + etternavn;
 		}
 	
 	public boolean isSperret(){
@@ -29,7 +29,7 @@ public abstract class Kort {
 	}
 	
 	public String toString(){
-		return forNavn + " " + etterNavn + "\n" + kortNummer + "\n" + pinKode + "\n"  + sperretKort;
+		return fornavn + " " + etternavn + "\n" + kortNummer + "\n" + pinKode + "\n"  + sperretKort;
 	}
 	public abstract boolean checkPIN(int pin);
 		/*if (pin==pinKode)

@@ -7,7 +7,7 @@ public class NøkkelkortSystem {
 	public static void main(String[] args) {
 		ArrayList<Kort> kortArray = new ArrayList<>();
 		
-		Kort k1 = new Ansatt("Ole Olsen", 1234);
+		Kort k1 = new Ansatt("Ole Olsen", 1234, 224, 12);
 		Kort k2 = new Gjest("Marit Olsen");
 		
 		kortArray.add(k1); 
