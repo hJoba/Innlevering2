@@ -1,6 +1,6 @@
 package Innlevering2;
 
-public abstract class Kort {
+public abstract class Kort implements Comparable<Kort>, Cloneable {
 	protected String etternavn;
 	protected String fornavn;
 	protected int pinKode;
@@ -36,6 +36,8 @@ public abstract class Kort {
 			return true;
 		else 
 		return false; */
+	
+
 	
 	
 	
